@@ -1,22 +1,16 @@
 /**
- * @fileoverview Entry Point of Solium plugin for Zeppelin audits
- * @author Leo Arias <yo@elopio.net>
+ * @fileoverview Entry Point of Dotta's Solium plugin
+ * @author Dotta <cryppadotta@protonmail.com>
  */
 
 "use strict";
 
 module.exports = {
     meta: {
-        description: "Solium plugin for Zeppelin audits"
+        description: "Dotta's Solium plugin"
     },
 
     rules: {
-        "constant-candidates": require("./rules/constant-candidates"),
-        "highlight-comments": require("./rules/highlight-comments"),
-        "missing-natspec-comments": require("./rules/missing-natspec-comments"),
-        "no-arithmetic-operations": require("./rules/no-arithmetic-operations"),
-        "no-state-variable-shadowing": require("./rules/no-state-variable-shadowing"),
-        "no-unchecked-send": require("./rules/no-unchecked-send"),
-        "no-unused-imports": require("./rules/no-unused-imports")
+        "underscore-function-arguments": require("./rules/underscore-function-arguments")
     }
 };

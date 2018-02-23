@@ -9,7 +9,7 @@ install:
   - npm install -g solium
   - npm install --dev
   - npm link
-  - npm link solium-plugin-zeppelin
+  - npm link solium-plugin-dotta
 script:
   - npm run lint
   - npm test

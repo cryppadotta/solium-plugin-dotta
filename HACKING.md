@@ -2,10 +2,10 @@
 
 ## Development setup
 
-    git clone https://github.com/elopio/solium-plugin-zeppelin
-    cd solium-plugin-zeppelin
+    git clone https://github.com/cryppadotta/solium-plugin-dotta
+    cd solium-plugin-dotta
     npm install --dev
-    npm link solium-plugin-zeppelin
+    npm link solium-plugin-dotta
 
 ## Run the static tests
 
