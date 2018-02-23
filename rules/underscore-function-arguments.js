@@ -42,7 +42,7 @@ module.exports = {
                 return;
             }
             const node = emitted.node;
-            node.params.forEach(param => inspectParameter(param));
+            (node.params || []).forEach(param => inspectParameter(param));
         }
 
         return {
