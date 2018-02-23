@@ -20,18 +20,14 @@ module.exports = {
     },
 
     create: function(context) {
-        function inspectParameter(parameter) {
-            if (
-                parameter.type === "InformalParameter" &&
-                parameter.literal &&
-                parameter.literal.literal
-            ) {
-                if (parameter.literal.literal[0] != "_") {
+        function inspectParameter(emitted, parameter) {
+            if (parameter.type === "InformalParameter" && parameter.id) {
+                if (parameter.id[0] != "_") {
                     context.report({
                         node: parameter,
-                        message: `Parameter "${
-                            parameter.literal.literal
-                        }" does not start with an underscore`
+                        message: `Function '${emitted.name}' parameter '${
+                            parameter.id
+                        }' does not start with an underscore`
                     });
                 }
             }
@@ -42,7 +38,7 @@ module.exports = {
                 return;
             }
             const node = emitted.node;
-            (node.params || []).forEach(param => inspectParameter(param));
+            (node.params || []).forEach(param => inspectParameter(node, param));
         }
 
         return {

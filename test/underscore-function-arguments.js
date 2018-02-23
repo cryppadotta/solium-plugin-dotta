@@ -28,7 +28,9 @@ describe.only("[RULE] underscore-function-arguments: Rejections", function() {
     });
 
     it("should reject functions that don't use underscore arguments", function(done) {
-        let code = toContract("function test_sum (a, _b) { return a + b; }"),
+        let code = toContract(
+                "function test_sum (uint256 a, uint256 _b) { return a + b; }"
+            ),
             errors = Solium.lint(code, userConfig);
 
         errors.constructor.name.should.equal("Array");
